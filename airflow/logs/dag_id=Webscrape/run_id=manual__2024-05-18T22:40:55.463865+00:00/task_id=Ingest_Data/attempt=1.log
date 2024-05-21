@@ -1,0 +1,92 @@
+[2024-05-18T22:40:58.269+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T22:40:58.313+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T22:40:55.463865+00:00 [queued]>
+[2024-05-18T22:40:58.328+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T22:40:55.463865+00:00 [queued]>
+[2024-05-18T22:40:58.329+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-18T22:40:58.344+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-18 22:40:55.463865+00:00
+[2024-05-18T22:40:58.352+0000] {standard_task_runner.py:63} INFO - Started process 347 to run task
+[2024-05-18T22:40:58.355+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-18T22:40:55.463865+00:00', '--job-id', '299', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmpcbrkw5ak']
+[2024-05-18T22:40:58.357+0000] {standard_task_runner.py:91} INFO - Job 299: Subtask Ingest_Data
+[2024-05-18T22:40:58.397+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T22:40:55.463865+00:00 [running]> on host c45bb9249772
+[2024-05-18T22:40:58.453+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-18T22:40:55.463865+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-18T22:40:55.463865+00:00'
+[2024-05-18T22:40:58.455+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T22:40:58.472+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.26.0.5', 9092)]>: connecting to kafka:9092 [('172.26.0.5', 9092) IPv4]
+[2024-05-18T22:40:58.474+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-18T22:40:58.476+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.26.0.5', 9092)]>: Connection complete.
+[2024-05-18T22:40:58.587+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-18T22:40:58.590+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-18T22:40:59.430+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser
+[2024-05-18T22:41:01.402+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com
+[2024-05-18T22:41:14.644+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-18T22:41:21.350+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-18T22:41:21.351+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-18T22:41:21.352+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/17113-Soho-Dr-28204/home/170607944
+[2024-05-18T22:41:39.629+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-18T22:41:44.062+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-18T22:41:44.520+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-05-18T22:41:44.526+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-18T22:41:44.534+0000] {process_utils.py:132} INFO - Sending 15 to group 347. PIDs of all processes in the group: [354, 347]
+[2024-05-18T22:41:44.535+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 347
+[2024-05-18T22:41:44.537+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-05-18T22:41:44.576+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-18T22:41:44.579+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/includes/main.py", line 205, in main
+    await run(playwright, producer)
+  File "/opt/airflow/dags/includes/main.py", line 198, in run
+    await browser.close()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 13658, in close
+    return mapping.from_maybe_impl(await self._impl_obj.close(reason=reason))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_browser.py", line 189, in close
+    raise e
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_browser.py", line 186, in close
+    await self._channel.send("close", {"reason": reason})
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 513, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Browser.close: Connection closed while reading from the driver
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/includes/main.py", line 208, in ingestion_start
+    asyncio.run(main())
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/includes/main.py", line 204, in main
+    async with async_playwright() as playwright:
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/async_api/_context_manager.py", line 57, in __aexit__
+    await self._connection.stop_async()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 285, in stop_async
+    self.cleanup()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 296, in cleanup
+    callback.future.set_exception(self._closed_error)
+asyncio.exceptions.InvalidStateError: invalid state
+[2024-05-18T22:41:44.596+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=Webscrape, task_id=Ingest_Data, run_id=manual__2024-05-18T22:40:55.463865+00:00, execution_date=20240518T224055, start_date=20240518T224058, end_date=20240518T224144
+[2024-05-18T22:41:44.608+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 299 for task Ingest_Data (invalid state; 347)
+[2024-05-18T22:41:44.650+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=347, status='terminated', exitcode=1, started='22:40:57') (347) terminated with exit code 1
+[2024-05-18T22:41:44.651+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=354, status='terminated', started='22:40:57') (354) terminated with exit code None

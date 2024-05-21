@@ -1,0 +1,90 @@
+[2024-05-18T23:32:26.416+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T23:32:26.630+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Real_Estate_Webscraping_ETL.Ingest_Data_from_Redfin scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-18T23:32:26.679+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Real_Estate_Webscraping_ETL.Ingest_Data_from_Redfin scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-18T23:32:26.680+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-18T23:32:26.728+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data_from_Redfin> on 2024-05-16 00:00:00+00:00
+[2024-05-18T23:32:26.810+0000] {standard_task_runner.py:63} INFO - Started process 771 to run task
+[2024-05-18T23:32:26.857+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Real_Estate_Webscraping_ETL', 'Ingest_Data_from_Redfin', 'scheduled__2024-05-16T00:00:00+00:00', '--job-id', '331', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmpsdfhn_7o']
+[2024-05-18T23:32:26.915+0000] {standard_task_runner.py:91} INFO - Job 331: Subtask Ingest_Data_from_Redfin
+[2024-05-18T23:32:27.323+0000] {task_command.py:426} INFO - Running <TaskInstance: Real_Estate_Webscraping_ETL.Ingest_Data_from_Redfin scheduled__2024-05-16T00:00:00+00:00 [running]> on host c0373bd0174c
+[2024-05-18T23:32:27.802+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Real_Estate_Webscraping_ETL' AIRFLOW_CTX_TASK_ID='Ingest_Data_from_Redfin' AIRFLOW_CTX_EXECUTION_DATE='2024-05-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-16T00:00:00+00:00'
+[2024-05-18T23:32:27.810+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T23:32:28.186+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.16.5', 9092)]>: connecting to kafka:9092 [('192.168.16.5', 9092) IPv4]
+[2024-05-18T23:32:28.196+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-18T23:32:28.214+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.16.5', 9092)]>: Connection complete.
+[2024-05-18T23:32:28.384+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-18T23:32:28.390+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-18T23:32:33.172+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser
+[2024-05-18T23:32:36.852+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com
+[2024-05-18T23:32:50.503+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-18T23:32:55.197+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-18T23:32:55.216+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-18T23:32:55.237+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/17113-Soho-Dr-28204/home/170607944
+[2024-05-18T23:33:03.850+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-05-18T23:33:04.047+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-18T23:33:04.101+0000] {process_utils.py:132} INFO - Sending 15 to group 771. PIDs of all processes in the group: [793, 771]
+[2024-05-18T23:33:04.125+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 771
+[2024-05-18T23:33:04.160+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-05-18T23:33:04.416+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-18T23:33:04.571+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/includes/main.py", line 205, in main
+    await run(playwright, producer)
+  File "/opt/airflow/dags/includes/main.py", line 198, in run
+    await browser.close()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 13658, in close
+    return mapping.from_maybe_impl(await self._impl_obj.close(reason=reason))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_browser.py", line 189, in close
+    raise e
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_browser.py", line 186, in close
+    await self._channel.send("close", {"reason": reason})
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 513, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Browser.close: Connection closed while reading from the driver
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/includes/main.py", line 208, in ingestion_start
+    asyncio.run(main())
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/includes/main.py", line 204, in main
+    async with async_playwright() as playwright:
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/async_api/_context_manager.py", line 57, in __aexit__
+    await self._connection.stop_async()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 285, in stop_async
+    self.cleanup()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 296, in cleanup
+    callback.future.set_exception(self._closed_error)
+asyncio.exceptions.InvalidStateError: invalid state
+[2024-05-18T23:33:04.709+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=793, status='terminated', started='23:32:27') (793) terminated with exit code None
+[2024-05-18T23:33:04.977+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=Real_Estate_Webscraping_ETL, task_id=Ingest_Data_from_Redfin, run_id=scheduled__2024-05-16T00:00:00+00:00, execution_date=20240516T000000, start_date=20240518T233226, end_date=20240518T233304
+[2024-05-18T23:33:05.297+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 331 for task Ingest_Data_from_Redfin (invalid state; 771)
+[2024-05-18T23:33:05.583+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=771, status='terminated', exitcode=1, started='23:32:26') (771) terminated with exit code 1

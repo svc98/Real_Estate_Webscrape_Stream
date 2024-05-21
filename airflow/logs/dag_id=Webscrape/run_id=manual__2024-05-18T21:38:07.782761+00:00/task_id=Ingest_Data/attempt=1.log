@@ -1,0 +1,179 @@
+[2024-05-18T21:38:11.381+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T21:38:11.411+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:38:07.782761+00:00 [queued]>
+[2024-05-18T21:38:11.420+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:38:07.782761+00:00 [queued]>
+[2024-05-18T21:38:11.421+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-18T21:38:11.449+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-18 21:38:07.782761+00:00
+[2024-05-18T21:38:11.466+0000] {standard_task_runner.py:63} INFO - Started process 5053 to run task
+[2024-05-18T21:38:11.469+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-18T21:38:07.782761+00:00', '--job-id', '293', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmp75upa06q']
+[2024-05-18T21:38:11.477+0000] {standard_task_runner.py:91} INFO - Job 293: Subtask Ingest_Data
+[2024-05-18T21:38:11.575+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:38:07.782761+00:00 [running]> on host f3c105d69d83
+[2024-05-18T21:38:11.753+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-18T21:38:07.782761+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-18T21:38:07.782761+00:00'
+[2024-05-18T21:38:11.756+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T21:38:11.777+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.7', 9092)]>: connecting to kafka:9092 [('172.25.0.7', 9092) IPv4]
+[2024-05-18T21:38:11.779+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-18T21:38:11.786+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.7', 9092)]>: Connection complete.
+[2024-05-18T21:38:11.916+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-18T21:38:11.927+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-18T21:38:12.941+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-18T21:38:14.965+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-18T21:38:21.554+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-18T21:38:25.773+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-18T21:38:25.776+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-18T21:38:25.780+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/5853-Mission-St-94112/unit-2/home/795540
+[2024-05-18T21:38:43.804+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-18T21:38:48.950+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-18T21:38:50.509+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-18T21:38:51.146+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-18T21:38:51.660+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-18T21:38:52.934+0000] {logging_mixin.py:188} INFO - {
+  "address": "5853 Mission St #2 San Francisco CA 94112",
+  "price": "525000",
+  "beds": "1",
+  "baths": "1",
+  "link": "https://www.redfin.com/CA/San-Francisco/5853-Mission-St-94112/unit-2/home/795540",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/item_1.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/genLdpUgcMediaBrowserUrl/item_2.jpg",
+    "https://my.matterport.com/api/v2/player/models/dfuTSuYsHx2/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/genLdpUgcMediaBrowserUrl/item_4.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/genLdpUgcMediaBrowserUrl/item_5.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/item_3.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/item_9.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/item_21.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922079_JPG/item_27.jpg"
+  ],
+  "hoa_fee": "400",
+  "buyers_agent_fee": "",
+  "listing_agent_name": "Cleveland Motley",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Cleveland Motley",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "708",
+  "stories": "1",
+  "style": "Condo/Co-op",
+  "year_built": "1980",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "6472032"
+}
+[2024-05-18T21:38:52.935+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-18T21:38:52.944+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.25.0.7', 9092)]>: connecting to kafka:9092 [('172.25.0.7', 9092) IPv4]
+[2024-05-18T21:38:52.945+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.25.0.7', 9092)]>: Connection complete.
+[2024-05-18T21:38:52.945+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.25.0.7', 9092)]>: Closing connection. 
+[2024-05-18T21:38:53.172+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-18T21:38:53.175+0000] {logging_mixin.py:188} INFO - 2
+[2024-05-18T21:38:53.178+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/1982-Scott-St-94115/home/12448849
+[2024-05-18T21:39:12.730+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-18T21:39:34.232+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-18T21:39:35.053+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-18T21:39:35.748+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-18T21:39:36.234+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-18T21:39:38.087+0000] {logging_mixin.py:188} INFO - {
+  "address": "1982 Scott St San Francisco CA 94115",
+  "price": "1695000",
+  "beds": "2",
+  "baths": "2",
+  "link": "https://www.redfin.com/CA/San-Francisco/1982-Scott-St-94115/home/12448849",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/519/424034519_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/519/genMid.424034519_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/519/genMid.424034519_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/519/genMid.424034519_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/519/genMid.424034519_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/519/424034519_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/519/424034519_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/519/424034519_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/519/424034519_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/519/424034519_27_0.jpg"
+  ],
+  "hoa_fee": "400",
+  "buyers_agent_fee": "",
+  "listing_agent_name": "Anna Spathis",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Sabina Girsh",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "",
+  "style": "Condo/Co-op",
+  "year_built": "",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "ca07d76a-1f91-4c21-962f-a1d44a2e2acc"
+}
+[2024-05-18T21:39:38.088+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-18T21:39:38.267+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-18T21:39:38.267+0000] {logging_mixin.py:188} INFO - 3
+[2024-05-18T21:39:38.270+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/88-Cameo-Way-94131/home/840418
+[2024-05-18T21:39:54.899+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-18T21:39:56.911+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-18T21:39:57.610+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-18T21:39:58.300+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-18T21:39:59.371+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-18T21:40:00.499+0000] {logging_mixin.py:188} INFO - {
+  "address": "88 Cameo Way San Francisco CA 94131",
+  "price": "2295000",
+  "beds": "4",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/CA/San-Francisco/88-Cameo-Way-94131/home/840418",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/27/bigphoto/928/424031928_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/mbpaddedwide/928/genMid.424031928_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/mbpaddedwide/928/genMid.424031928_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/mbpaddedwide/928/genMid.424031928_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/mbpaddedwide/928/genMid.424031928_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/bigphoto/928/424031928_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/bigphoto/928/424031928_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/bigphoto/928/424031928_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/bigphoto/928/424031928_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/bigphoto/928/424031928_27_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/27/bigphoto/928/424031928_33_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Gary Chang",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Anthony Torres",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "2007",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1965",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "7513045"
+}
+[2024-05-18T21:40:00.500+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-18T21:40:00.632+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-18T21:40:00.638+0000] {logging_mixin.py:188} INFO - 4
+[2024-05-18T21:40:00.641+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/1-Bristol-Ct-94130/unit-208/home/187610447
+[2024-05-18T21:40:16.979+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-18T21:40:49.488+0000] {logging_mixin.py:188} INFO - Traceback (most recent call last):
+  File "/opt/***/dags/includes/main.py", line 152, in run
+    redfin_agent_content = await page2.inner_html("div[id='askAnAgent-collapsible']")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 10338, in inner_html
+    await self._impl_obj.inner_html(
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_page.py", line 885, in inner_html
+    return await self._main_frame.inner_html(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 623, in inner_html
+    return await self._channel.send("innerHTML", locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 513, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.inner_html: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("div[id='askAnAgent-collapsible']")
+[2024-05-18T21:40:49.736+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-18T21:40:49.741+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-18T21:40:49.823+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Webscrape, task_id=Ingest_Data, run_id=manual__2024-05-18T21:38:07.782761+00:00, execution_date=20240518T213807, start_date=20240518T213811, end_date=20240518T214049
+[2024-05-18T21:40:49.933+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-18T21:40:50.011+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-18T21:40:50.014+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

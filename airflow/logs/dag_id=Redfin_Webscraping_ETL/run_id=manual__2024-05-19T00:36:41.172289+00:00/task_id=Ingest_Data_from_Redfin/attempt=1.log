@@ -1,0 +1,1068 @@
+[2024-05-19T00:36:44.661+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-19T00:36:44.863+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Redfin_Webscraping_ETL.Ingest_Data_from_Redfin manual__2024-05-19T00:36:41.172289+00:00 [queued]>
+[2024-05-19T00:36:44.869+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Redfin_Webscraping_ETL.Ingest_Data_from_Redfin manual__2024-05-19T00:36:41.172289+00:00 [queued]>
+[2024-05-19T00:36:44.870+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-19T00:36:44.888+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data_from_Redfin> on 2024-05-19 00:36:41.172289+00:00
+[2024-05-19T00:36:44.921+0000] {standard_task_runner.py:63} INFO - Started process 3187 to run task
+[2024-05-19T00:36:44.979+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Redfin_Webscraping_ETL', 'Ingest_Data_from_Redfin', 'manual__2024-05-19T00:36:41.172289+00:00', '--job-id', '462', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmpvxic5gav']
+[2024-05-19T00:36:45.050+0000] {standard_task_runner.py:91} INFO - Job 462: Subtask Ingest_Data_from_Redfin
+[2024-05-19T00:36:45.915+0000] {task_command.py:426} INFO - Running <TaskInstance: Redfin_Webscraping_ETL.Ingest_Data_from_Redfin manual__2024-05-19T00:36:41.172289+00:00 [running]> on host eddd84e36bad
+[2024-05-19T00:36:46.392+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Redfin_Webscraping_ETL' AIRFLOW_CTX_TASK_ID='Ingest_Data_from_Redfin' AIRFLOW_CTX_EXECUTION_DATE='2024-05-19T00:36:41.172289+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-19T00:36:41.172289+00:00'
+[2024-05-19T00:36:46.411+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-19T00:36:46.489+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.96.5', 9092)]>: connecting to kafka:9092 [('192.168.96.5', 9092) IPv4]
+[2024-05-19T00:36:46.491+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-19T00:36:46.494+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.96.5', 9092)]>: Connection complete.
+[2024-05-19T00:36:46.611+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-19T00:36:46.612+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-19T00:36:47.830+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser
+[2024-05-19T00:36:50.234+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com
+[2024-05-19T00:37:00.545+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-19T00:37:09.048+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:37:09.055+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-19T00:37:09.058+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/17113-Soho-Dr-28204/home/170607944
+[2024-05-19T00:37:23.607+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:37:29.747+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:37:32.356+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:37:33.083+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:37:33.620+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:37:34.973+0000] {logging_mixin.py:188} INFO - {
+  "address": "17113 Soho Dr Charlotte NC 28204",
+  "price": "760000",
+  "beds": "3",
+  "baths": "4.5",
+  "link": "https://www.redfin.com/NC/Charlotte/17113-Soho-Dr-28204/home/170607944",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_9.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_11.jpg",
+    "https://my.matterport.com/api/v2/player/models/ED3A7ghRwH6/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_13.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_14.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_12.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_18.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_24.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_30.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_36.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_43.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_51.jpg"
+  ],
+  "hoa_fee": "236",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Jon Bartholomew",
+  "listing_agent_contact": "jonathan.bartholomew@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "4",
+  "style": "Townhouse",
+  "year_built": "2020",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "08111612"
+}
+[2024-05-19T00:37:34.975+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:37:34.988+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.96.5', 9092)]>: connecting to kafka:9092 [('192.168.96.5', 9092) IPv4]
+[2024-05-19T00:37:34.990+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.96.5', 9092)]>: Connection complete.
+[2024-05-19T00:37:34.990+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.96.5', 9092)]>: Closing connection. 
+[2024-05-19T00:37:35.098+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:37:35.099+0000] {logging_mixin.py:188} INFO - 2
+[2024-05-19T00:37:35.100+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/3200-Dunaire-Dr-28205/home/43938459
+[2024-05-19T00:37:50.135+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:37:52.395+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:37:53.190+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:37:54.229+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:37:54.844+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:37:56.464+0000] {logging_mixin.py:188} INFO - {
+  "address": "3200 Dunaire Dr Charlotte NC 28205",
+  "price": "475000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/3200-Dunaire-Dr-28205/home/43938459",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_1.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_2.jpg",
+    "https://my.matterport.com/api/v2/player/models/EL5PrvVRLoz/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_4.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_5.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_3.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_11.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_21.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_27.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_33.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_39.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_45.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Lilliah Moseley",
+  "listing_agent_contact": "lilliah.moseley@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1442",
+  "unfinished_sqft": "",
+  "total_sqft": "1442",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1959",
+  "year_renovated": "1970",
+  "county": "Mecklenburg County",
+  "APN": "10112504"
+}
+[2024-05-19T00:37:56.472+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:37:56.572+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:37:56.573+0000] {logging_mixin.py:188} INFO - 3
+[2024-05-19T00:37:56.575+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/2739-Grand-Union-Way-28209/home/148598761
+[2024-05-19T00:38:19.064+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:38:33.455+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:38:34.319+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:38:34.901+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:38:36.140+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:38:37.372+0000] {logging_mixin.py:188} INFO - {
+  "address": "2739 Grand Union Way Charlotte NC 28209",
+  "price": "649900",
+  "beds": "3",
+  "baths": "3.5",
+  "link": "https://www.redfin.com/NC/Charlotte/2739-Grand-Union-Way-28209/home/148598761",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_22.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_38.jpg",
+    "https://my.matterport.com/api/v2/player/models/cVZCU4kuhtR/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_30.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_45.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_46.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_1.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_5.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_10.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_18.jpg"
+  ],
+  "hoa_fee": "262",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Jill Moyer",
+  "listing_agent_contact": "jill.moyer@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "4",
+  "style": "Townhouse",
+  "year_built": "2019",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "14901360"
+}
+[2024-05-19T00:38:37.375+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:38:37.550+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:38:37.551+0000] {logging_mixin.py:188} INFO - 4
+[2024-05-19T00:38:37.556+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/12350-Copper-Mountain-Blvd-28277/home/188599332
+[2024-05-19T00:38:53.242+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:39:01.521+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:39:02.439+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:39:03.119+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:39:03.716+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:39:05.113+0000] {logging_mixin.py:188} INFO - {
+  "address": "12350 Copper Mountain Blvd Charlotte NC 28277",
+  "price": "280000",
+  "beds": "2",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/12350-Copper-Mountain-Blvd-28277/home/188599332",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/228/4142228_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/228/genMid.4142228_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/228/genMid.4142228_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/228/genMid.4142228_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/228/genMid.4142228_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/228/4142228_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/228/4142228_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/228/4142228_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/228/4142228_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/228/4142228_27_0.jpg"
+  ],
+  "hoa_fee": "386",
+  "buyers_agent_fee": "1.5",
+  "listing_agent_name": "Nancy Braun",
+  "listing_agent_contact": "nancy@showcaserealty.net",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "",
+  "style": "Condo/Co-op",
+  "year_built": "",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "22351544"
+}
+[2024-05-19T00:39:05.114+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:39:05.284+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:39:05.286+0000] {logging_mixin.py:188} INFO - 5
+[2024-05-19T00:39:05.289+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/3002-Amesbury-Hill-Dr-28269/home/113373793
+[2024-05-19T00:39:22.789+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:39:33.019+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:39:34.177+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:39:34.748+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:39:35.175+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:39:36.477+0000] {logging_mixin.py:188} INFO - {
+  "address": "3002 Amesbury Hill Dr Charlotte NC 28269",
+  "price": "580000",
+  "beds": "4",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/3002-Amesbury-Hill-Dr-28269/home/113373793",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/847/4141847_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/847/genMid.4141847_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/847/genMid.4141847_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/847/genMid.4141847_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/847/genMid.4141847_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/847/4141847_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/847/4141847_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/847/4141847_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/847/4141847_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/847/4141847_27_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/847/4141847_33_0.jpg"
+  ],
+  "hoa_fee": "31",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Sherika Dyer",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Karen Krotki",
+  "finished_sqft": "3339",
+  "unfinished_sqft": "",
+  "total_sqft": "3339",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2016",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "02760237"
+}
+[2024-05-19T00:39:36.478+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:39:36.612+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:39:36.615+0000] {logging_mixin.py:188} INFO - 6
+[2024-05-19T00:39:36.617+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/7728-Ridgeloch-Pl-28226/home/44020150
+[2024-05-19T00:39:57.414+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:40:05.232+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:40:06.563+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:40:07.186+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:40:07.634+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:40:08.955+0000] {logging_mixin.py:188} INFO - {
+  "address": "7728 Ridgeloch Pl Charlotte NC 28226",
+  "price": "675000",
+  "beds": "3",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/7728-Ridgeloch-Pl-28226/home/44020150",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/702/4136702_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/702/genMid.4136702_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/702/genMid.4136702_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/702/genMid.4136702_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/702/genMid.4136702_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/702/4136702_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/702/4136702_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/702/4136702_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/702/4136702_21_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "1",
+  "listing_agent_name": "Don Gomez",
+  "listing_agent_contact": "DonAnthonyRealty@gmail.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1906",
+  "unfinished_sqft": "",
+  "total_sqft": "1906",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1985",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "21126356"
+}
+[2024-05-19T00:40:08.956+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:40:09.174+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:40:09.186+0000] {logging_mixin.py:188} INFO - 7
+[2024-05-19T00:40:09.191+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/8344-Meadow-Lakes-Dr-28210/home/43991427
+[2024-05-19T00:40:26.690+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:40:30.771+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:40:31.689+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:40:33.127+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:40:33.675+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:40:35.600+0000] {logging_mixin.py:188} INFO - {
+  "address": "8344 Meadow Lakes Dr Charlotte NC 28210",
+  "price": "269000",
+  "beds": "2",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/8344-Meadow-Lakes-Dr-28210/home/43991427",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/254/4142254_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/254/genMid.4142254_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/254/genMid.4142254_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/254/genMid.4142254_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/254/genMid.4142254_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/254/4142254_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/254/4142254_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/254/4142254_15_0.jpg"
+  ],
+  "hoa_fee": "592",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Alex Salazar",
+  "listing_agent_contact": "Alex@SACarolinas.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1255",
+  "unfinished_sqft": "",
+  "total_sqft": "1255",
+  "stories": "1",
+  "style": "Condo/Co-op",
+  "year_built": "1973",
+  "year_renovated": "1978",
+  "county": "Mecklenburg County",
+  "APN": "17329136"
+}
+[2024-05-19T00:40:35.603+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:40:35.789+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:40:35.790+0000] {logging_mixin.py:188} INFO - 8
+[2024-05-19T00:40:35.792+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/7148-Haines-Mill-Rd-28273/home/44153480
+[2024-05-19T00:40:48.741+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:40:49.888+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:40:50.754+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:40:51.489+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:40:51.976+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:40:53.711+0000] {logging_mixin.py:188} INFO - {
+  "address": "7148 Haines Mill Rd Charlotte NC 28273",
+  "price": "385000",
+  "beds": "3",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/7148-Haines-Mill-Rd-28273/home/44153480",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/208/4139208_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/208/genMid.4139208_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/208/genMid.4139208_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/208/genMid.4139208_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/208/genMid.4139208_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/208/4139208_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/208/4139208_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/208/4139208_15_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Tyrekus Williams",
+  "listing_agent_contact": "tevanssells4u@yahoo.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1756",
+  "unfinished_sqft": "",
+  "total_sqft": "1756",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2007",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "20101643"
+}
+[2024-05-19T00:40:53.712+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:40:53.839+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:40:53.842+0000] {logging_mixin.py:188} INFO - 9
+[2024-05-19T00:40:53.845+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/3511-Spencer-St-28205/home/104514074
+[2024-05-19T00:41:16.681+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:41:21.912+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:41:22.783+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:41:23.445+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:41:23.886+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:41:25.377+0000] {logging_mixin.py:188} INFO - {
+  "address": "3511 Spencer St Charlotte NC 28205",
+  "price": "554990",
+  "beds": "3",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/3511-Spencer-St-28205/home/104514074",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/244/4142244_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/244/genMid.4142244_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/244/genMid.4142244_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/244/genMid.4142244_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/244/genMid.4142244_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/244/4142244_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/244/4142244_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/244/4142244_15_0.jpg"
+  ],
+  "hoa_fee": "240",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Steph Kronen",
+  "listing_agent_contact": "Steph.Kronen@Compass.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1845",
+  "unfinished_sqft": "",
+  "total_sqft": "1845",
+  "stories": "2.5",
+  "style": "Townhouse",
+  "year_built": "2015",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "09106803"
+}
+[2024-05-19T00:41:25.378+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:41:25.572+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:41:25.579+0000] {logging_mixin.py:188} INFO - 10
+[2024-05-19T00:41:25.582+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/6805-Burlwood-Rd-28211/home/44003808
+[2024-05-19T00:41:45.387+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:41:47.964+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:41:49.048+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:41:50.081+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:41:50.489+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:41:51.802+0000] {logging_mixin.py:188} INFO - {
+  "address": "6805 Burlwood Rd Charlotte NC 28211",
+  "price": "425000",
+  "beds": "5",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/6805-Burlwood-Rd-28211/home/44003808",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/063/4142063_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/063/genMid.4142063_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/063/genMid.4142063_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/063/genMid.4142063_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/063/genMid.4142063_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/063/4142063_3_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Dulce Delgado",
+  "listing_agent_contact": "dulce@northwayhomes.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1820",
+  "unfinished_sqft": "",
+  "total_sqft": "1820",
+  "stories": "",
+  "style": "Single Family Residential",
+  "year_built": "1981",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "18919402"
+}
+[2024-05-19T00:41:51.803+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:41:51.989+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:41:51.991+0000] {logging_mixin.py:188} INFO - 11
+[2024-05-19T00:41:51.994+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/9772-Springholm-Dr-28278/home/44178720
+[2024-05-19T00:42:17.623+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:42:21.315+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:42:22.291+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:42:23.113+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:42:23.635+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:42:25.083+0000] {logging_mixin.py:188} INFO - {
+  "address": "9772 Springholm Dr Charlotte NC 28278",
+  "price": "383990",
+  "beds": "3",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/9772-Springholm-Dr-28278/home/44178720",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/189/4142189_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/189/genMid.4142189_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/189/genMid.4142189_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/189/genMid.4142189_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/189/genMid.4142189_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/189/4142189_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/189/4142189_9_0.jpg"
+  ],
+  "hoa_fee": "330",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Chirag Santwani",
+  "listing_agent_contact": "chirag@sanvista-realty.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1890",
+  "unfinished_sqft": "",
+  "total_sqft": "1890",
+  "stories": "2",
+  "style": "Townhouse",
+  "year_built": "2010",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "19925438"
+}
+[2024-05-19T00:42:25.086+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:42:25.304+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:42:25.305+0000] {logging_mixin.py:188} INFO - 12
+[2024-05-19T00:42:25.306+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/3701-Barclay-Downs-Dr-28209/home/43997049
+[2024-05-19T00:42:43.055+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:42:45.653+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:42:46.574+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:42:47.302+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:42:47.755+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:42:49.159+0000] {logging_mixin.py:188} INFO - {
+  "address": "3701 Barclay Downs Dr Charlotte NC 28209",
+  "price": "2250000",
+  "beds": "6",
+  "baths": "5",
+  "link": "https://www.redfin.com/NC/Charlotte/3701-Barclay-Downs-Dr-28209/home/43997049",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/458/4134458_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/458/genMid.4134458_1_6.jpg",
+    "https://i.ytimg.com/vi/amKqIFulo20/hqdefault.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/458/genMid.4134458_3_6.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/458/genMid.4134458_4_6.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/458/4134458_2_6.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/458/4134458_8_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/458/4134458_14_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/458/4134458_20_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/458/4134458_26_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/458/4134458_32_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/458/4134458_38_0.jpg"
+  ],
+  "hoa_fee": "2",
+  "buyers_agent_fee": "3",
+  "listing_agent_name": "Regina Farmer",
+  "listing_agent_contact": "regina@reginafarmerrealty.com",
+  "redfin_agent_name": "Jon Bartholomew",
+  "finished_sqft": "4698",
+  "unfinished_sqft": "",
+  "total_sqft": "4698",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "1962",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "17702157"
+}
+[2024-05-19T00:42:49.161+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:42:49.314+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:42:49.315+0000] {logging_mixin.py:188} INFO - 13
+[2024-05-19T00:42:49.317+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/12315-Poplar-Forest-Dr-28278/home/44151270
+[2024-05-19T00:43:09.505+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:43:12.148+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:43:13.063+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:43:13.654+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:43:14.210+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:43:16.038+0000] {logging_mixin.py:188} INFO - {
+  "address": "12315 Poplar Forest Dr Charlotte NC 28278",
+  "price": "409900",
+  "beds": "4",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/12315-Poplar-Forest-Dr-28278/home/44151270",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/011/4141011_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/011/genMid.4141011_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/011/genMid.4141011_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/011/genMid.4141011_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/011/genMid.4141011_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/011/4141011_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/011/4141011_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/011/4141011_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/011/4141011_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/011/4141011_27_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/011/4141011_33_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/011/4141011_39_0.jpg"
+  ],
+  "hoa_fee": "24",
+  "buyers_agent_fee": "1",
+  "listing_agent_name": "Patricia Botero",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1872",
+  "unfinished_sqft": "",
+  "total_sqft": "1872",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2000",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "19963305"
+}
+[2024-05-19T00:43:16.039+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:43:16.234+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:43:16.235+0000] {logging_mixin.py:188} INFO - 14
+[2024-05-19T00:43:16.237+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/8630-Sawleaf-Ct-28215/home/44098706
+[2024-05-19T00:43:33.278+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:43:37.241+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:43:38.072+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:43:38.848+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:43:39.399+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:43:40.798+0000] {logging_mixin.py:188} INFO - {
+  "address": "8630 Sawleaf Ct Charlotte NC 28215",
+  "price": "320000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/8630-Sawleaf-Ct-28215/home/44098706",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/198/4142198_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/198/genMid.4142198_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/198/genMid.4142198_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/198/genMid.4142198_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/198/genMid.4142198_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/198/4142198_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/198/4142198_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/198/4142198_15_0.jpg"
+  ],
+  "hoa_fee": "51",
+  "buyers_agent_fee": "2.25",
+  "listing_agent_name": "Jon Hines",
+  "listing_agent_contact": "jon@sell4max.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1750",
+  "unfinished_sqft": "",
+  "total_sqft": "1750",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2002",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "10806511"
+}
+[2024-05-19T00:43:40.800+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:43:40.985+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:43:40.986+0000] {logging_mixin.py:188} INFO - 15
+[2024-05-19T00:43:40.987+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/1428-McIlroy-Rd-28212/home/43998741
+[2024-05-19T00:44:00.506+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:44:06.744+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:44:07.392+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:44:07.810+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:44:09.322+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:44:10.703+0000] {logging_mixin.py:188} INFO - {
+  "address": "1428 Mcilroy Rd Charlotte NC 28212",
+  "price": "539000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/1428-McIlroy-Rd-28212/home/43998741",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/081/4142081_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/081/genMid.4142081_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/081/genMid.4142081_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/081/genMid.4142081_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/081/genMid.4142081_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/081/4142081_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/081/4142081_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/081/4142081_15_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Stephen Scott",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1712",
+  "unfinished_sqft": "",
+  "total_sqft": "1712",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1972",
+  "year_renovated": "1975",
+  "county": "Mecklenburg County",
+  "APN": "18902411"
+}
+[2024-05-19T00:44:10.703+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:44:10.869+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:44:10.871+0000] {logging_mixin.py:188} INFO - 16
+[2024-05-19T00:44:10.873+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/2009-Boynton-St-28269/home/176752007
+[2024-05-19T00:44:29.556+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:44:41.508+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:44:42.356+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:44:43.033+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:44:43.481+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:44:44.785+0000] {logging_mixin.py:188} INFO - {
+  "address": "2009 Boynton St Charlotte NC 28269",
+  "price": "585000",
+  "beds": "5",
+  "baths": "4.5",
+  "link": "https://www.redfin.com/NC/Charlotte/2009-Boynton-St-28269/home/176752007",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/652/4141652_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/652/genMid.4141652_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/652/genMid.4141652_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/652/genMid.4141652_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/652/genMid.4141652_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/652/4141652_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/652/4141652_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/652/4141652_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/652/4141652_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/652/4141652_27_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/652/4141652_33_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/652/4141652_39_0.jpg"
+  ],
+  "hoa_fee": "83",
+  "buyers_agent_fee": "3",
+  "listing_agent_name": "Lauren Dayton",
+  "listing_agent_contact": "ldayton@helenadamsrealty.com",
+  "redfin_agent_name": "Karen Krotki",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2021",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "02718582"
+}
+[2024-05-19T00:44:44.786+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:44:44.932+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:44:44.934+0000] {logging_mixin.py:188} INFO - 17
+[2024-05-19T00:44:44.939+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/15027-Boudins-Ln-28278/home/44165077
+[2024-05-19T00:45:08.538+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:45:14.751+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:45:15.634+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:45:16.273+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:45:16.775+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:45:18.120+0000] {logging_mixin.py:188} INFO - {
+  "address": "15027 Boudins Ln Charlotte NC 28278",
+  "price": "539900",
+  "beds": "5",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/15027-Boudins-Ln-28278/home/44165077",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/178/4142178_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/178/genMid.4142178_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/178/genMid.4142178_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/178/genMid.4142178_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/178/genMid.4142178_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/178/4142178_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/178/4142178_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/178/genMid.4142178_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/178/genMid.4142178_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/178/4142178_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/178/4142178_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/178/4142178_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/178/4142178_27_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/178/4142178_33_0.jpg"
+  ],
+  "hoa_fee": "190",
+  "buyers_agent_fee": "3",
+  "listing_agent_name": "Sean Walker",
+  "listing_agent_contact": "sean.walker@pickethomes.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2018",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "21728245"
+}
+[2024-05-19T00:45:18.121+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:45:18.374+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:45:18.376+0000] {logging_mixin.py:188} INFO - 18
+[2024-05-19T00:45:18.378+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/2924-Sharon-View-Rd-28210/home/44018158
+[2024-05-19T00:46:58.008+0000] {logging_mixin.py:188} INFO - No Pictures
+[2024-05-19T00:46:58.780+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:46:59.565+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:47:00.306+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:47:00.783+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:47:02.197+0000] {logging_mixin.py:188} INFO - {
+  "address": "2924 Sharon View Rd Charlotte NC 28210",
+  "price": "1200000",
+  "beds": "5",
+  "baths": "4",
+  "link": "https://www.redfin.com/NC/Charlotte/2924-Sharon-View-Rd-28210/home/44018158",
+  "photos": [],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Vernon Jackson",
+  "listing_agent_contact": "Vernon@VernonJackson3.com",
+  "redfin_agent_name": "Jon Bartholomew",
+  "finished_sqft": "2484",
+  "unfinished_sqft": "",
+  "total_sqft": "2484",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1978",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "20906203"
+}
+[2024-05-19T00:47:02.200+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:47:02.526+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:47:02.530+0000] {logging_mixin.py:188} INFO - 19
+[2024-05-19T00:47:02.534+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/5124-Star-Hill-Ln-28214/home/113367316
+[2024-05-19T00:47:25.125+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:47:38.649+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:47:39.636+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:47:40.185+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:47:40.608+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:47:41.900+0000] {logging_mixin.py:188} INFO - {
+  "address": "5124 Star Hill Ln Charlotte NC 28214",
+  "price": "480000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/5124-Star-Hill-Ln-28214/home/113367316",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/091/4141091_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/091/genMid.4141091_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/091/genMid.4141091_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/091/genMid.4141091_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/091/genMid.4141091_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/091/4141091_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/091/4141091_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/091/genMid.4141091_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/091/genMid.4141091_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/091/4141091_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/091/4141091_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/091/4141091_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/091/4141091_27_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/091/4141091_33_0.jpg"
+  ],
+  "hoa_fee": "322",
+  "buyers_agent_fee": "3",
+  "listing_agent_name": "Drew Choate",
+  "listing_agent_contact": "drew@lwman.com",
+  "redfin_agent_name": "Karen Krotki",
+  "finished_sqft": "1828",
+  "unfinished_sqft": "",
+  "total_sqft": "1828",
+  "stories": "1.5",
+  "style": "Single Family Residential",
+  "year_built": "2016",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "11322404"
+}
+[2024-05-19T00:47:41.903+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:47:42.118+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:47:42.119+0000] {logging_mixin.py:188} INFO - 20
+[2024-05-19T00:47:42.126+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/2610-Hamilton-Crossings-Dr-28214/home/44124257
+[2024-05-19T00:47:57.389+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:48:00.336+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:48:01.237+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:48:01.913+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:48:02.341+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:48:03.880+0000] {logging_mixin.py:188} INFO - {
+  "address": "2610 Hamilton Crossings Dr Charlotte NC 28214",
+  "price": "875000",
+  "beds": "5",
+  "baths": "5",
+  "link": "https://www.redfin.com/NC/Charlotte/2610-Hamilton-Crossings-Dr-28214/home/44124257",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/814/4141814_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/814/genMid.4141814_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/814/genMid.4141814_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/814/genMid.4141814_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/814/genMid.4141814_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/814/4141814_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/814/4141814_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/814/genMid.4141814_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/814/genMid.4141814_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/814/4141814_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/814/4141814_15_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/814/4141814_21_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/814/4141814_27_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/814/4141814_33_1.jpg"
+  ],
+  "hoa_fee": "129",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Renee Austin Elkin",
+  "listing_agent_contact": "renee@reneeelkin.com",
+  "redfin_agent_name": "Brian Rogers",
+  "finished_sqft": "3580",
+  "unfinished_sqft": "",
+  "total_sqft": "3580",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2005",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "02323224"
+}
+[2024-05-19T00:48:03.884+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:48:04.072+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:48:04.073+0000] {logging_mixin.py:188} INFO - 21
+[2024-05-19T00:48:04.076+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/14646-Via-Sorrento-Dr-28277/home/44131336
+[2024-05-19T00:48:23.666+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:48:27.224+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:48:27.913+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:48:28.572+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:48:29.050+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:48:30.322+0000] {logging_mixin.py:188} INFO - {
+  "address": "14646 Via Sorrento Dr Charlotte NC 28277",
+  "price": "320000",
+  "beds": "2",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/14646-Via-Sorrento-Dr-28277/home/44131336",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/791/4141791_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/791/genMid.4141791_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/791/genMid.4141791_2_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/791/genMid.4141791_4_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/791/genMid.4141791_5_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/791/4141791_3_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/791/4141791_6_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/791/genMid.4141791_7_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/791/genMid.4141791_8_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/791/4141791_9_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/791/4141791_15_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/791/4141791_21_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/791/4141791_27_1.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Megan Votruba",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1020",
+  "unfinished_sqft": "",
+  "total_sqft": "1020",
+  "stories": "1",
+  "style": "Condo/Co-op",
+  "year_built": "2005",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "22354522"
+}
+[2024-05-19T00:48:30.325+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:48:30.493+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:48:30.494+0000] {logging_mixin.py:188} INFO - 22
+[2024-05-19T00:48:30.496+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/9519-Turning-Wheel-Dr-28214/home/44158470
+[2024-05-19T00:48:50.893+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:48:55.880+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:48:56.855+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:48:57.504+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:48:57.960+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:48:59.202+0000] {logging_mixin.py:188} INFO - {
+  "address": "9519 Turning Wheel Dr Charlotte NC 28214",
+  "price": "417000",
+  "beds": "4",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/9519-Turning-Wheel-Dr-28214/home/44158470",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/435/4136435_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/435/genMid.4136435_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/435/genMid.4136435_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/435/genMid.4136435_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/435/genMid.4136435_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/435/4136435_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/435/4136435_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/435/genMid.4136435_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/435/genMid.4136435_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/435/4136435_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/435/4136435_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/435/4136435_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/435/4136435_27_0.jpg"
+  ],
+  "hoa_fee": "86",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Shana Brookshire Harris",
+  "listing_agent_contact": "theharrisluxury@gmail.com",
+  "redfin_agent_name": "Karen Krotki",
+  "finished_sqft": "2186",
+  "unfinished_sqft": "",
+  "total_sqft": "2186",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2011",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "03105273"
+}
+[2024-05-19T00:48:59.206+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:48:59.458+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:48:59.464+0000] {logging_mixin.py:188} INFO - 23
+[2024-05-19T00:48:59.469+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/5535-Kincross-Ln-28277/home/44042194
+[2024-05-19T00:49:14.901+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:49:17.247+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:49:18.096+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:49:18.822+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:49:21.050+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:49:22.426+0000] {logging_mixin.py:188} INFO - {
+  "address": "5535 Kincross Ln Charlotte NC 28277",
+  "price": "825000",
+  "beds": "4",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/5535-Kincross-Ln-28277/home/44042194",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_1.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/846/genMid.4138846_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/846/genMid.4138846_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/846/genMid.4138846_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/846/genMid.4138846_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/846/genMid.4138846_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/846/genMid.4138846_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_27_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_33_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/846/4138846_39_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "3",
+  "listing_agent_name": "Rachelle Gilman",
+  "listing_agent_contact": "rachelle.gilman@bhhscarolinas.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "2722",
+  "unfinished_sqft": "",
+  "total_sqft": "2722",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "1986",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "22535329"
+}
+[2024-05-19T00:49:22.428+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:49:22.622+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:49:22.623+0000] {logging_mixin.py:188} INFO - 24
+[2024-05-19T00:49:22.624+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/8331-Olde-Troon-Dr-28277/home/44040327
+[2024-05-19T00:49:41.900+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-19T00:49:48.295+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-19T00:49:49.299+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-19T00:49:49.904+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-19T00:49:50.421+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-19T00:49:51.860+0000] {logging_mixin.py:188} INFO - {
+  "address": "8331 Olde Troon Dr Charlotte NC 28277",
+  "price": "444900",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/8331-Olde-Troon-Dr-28277/home/44040327",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/985/4130985_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/985/genMid.4130985_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/985/genMid.4130985_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/985/genMid.4130985_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/985/genMid.4130985_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/985/4130985_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/985/4130985_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/985/genMid.4130985_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/985/genMid.4130985_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/985/4130985_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/985/4130985_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/985/4130985_21_0.jpg"
+  ],
+  "hoa_fee": "486",
+  "buyers_agent_fee": "2.5\u00a0buyer's",
+  "listing_agent_name": "Douglas Carson",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1489",
+  "unfinished_sqft": "",
+  "total_sqft": "1489",
+  "stories": "1",
+  "style": "Townhouse",
+  "year_built": "1996",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "22360217"
+}
+[2024-05-19T00:49:51.862+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-19T00:49:52.262+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-19T00:49:52.266+0000] {logging_mixin.py:188} INFO - 25
+[2024-05-19T00:49:52.268+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/7822-Waverly-Walk-Ave-28277/home/108421667
+[2024-05-19T00:51:30.980+0000] {logging_mixin.py:188} INFO - No Pictures
+[2024-05-19T00:53:01.074+0000] {logging_mixin.py:188} INFO - Traceback (most recent call last):
+  File "/opt/***/dags/includes/main.py", line 150, in run
+    key_details_content = await page2.inner_html("div[class='keyDetailsList']", timeout=90000)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 10338, in inner_html
+    await self._impl_obj.inner_html(
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_page.py", line 885, in inner_html
+    return await self._main_frame.inner_html(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 623, in inner_html
+    return await self._channel.send("innerHTML", locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 513, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.inner_html: Timeout 90000ms exceeded.
+Call log:
+waiting for locator("div[class='keyDetailsList']")
+[2024-05-19T00:53:01.412+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-19T00:53:01.431+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-19T00:53:01.534+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Redfin_Webscraping_ETL, task_id=Ingest_Data_from_Redfin, run_id=manual__2024-05-19T00:36:41.172289+00:00, execution_date=20240519T003641, start_date=20240519T003644, end_date=20240519T005301
+[2024-05-19T00:53:01.645+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-19T00:53:01.729+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-19T00:53:01.731+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

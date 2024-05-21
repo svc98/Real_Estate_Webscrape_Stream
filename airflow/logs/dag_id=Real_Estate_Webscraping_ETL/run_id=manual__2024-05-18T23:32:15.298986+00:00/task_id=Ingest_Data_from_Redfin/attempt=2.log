@@ -1,0 +1,28 @@
+[2024-05-18T23:33:42.437+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T23:33:42.464+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Real_Estate_Webscraping_ETL.Ingest_Data_from_Redfin manual__2024-05-18T23:32:15.298986+00:00 [queued]>
+[2024-05-18T23:33:42.469+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Real_Estate_Webscraping_ETL.Ingest_Data_from_Redfin manual__2024-05-18T23:32:15.298986+00:00 [queued]>
+[2024-05-18T23:33:42.469+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 7
+[2024-05-18T23:33:42.477+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data_from_Redfin> on 2024-05-18 23:32:15.298986+00:00
+[2024-05-18T23:33:42.485+0000] {standard_task_runner.py:63} INFO - Started process 1222 to run task
+[2024-05-18T23:33:42.489+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Real_Estate_Webscraping_ETL', 'Ingest_Data_from_Redfin', 'manual__2024-05-18T23:32:15.298986+00:00', '--job-id', '334', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmprxs8c6nq']
+[2024-05-18T23:33:42.498+0000] {standard_task_runner.py:91} INFO - Job 334: Subtask Ingest_Data_from_Redfin
+[2024-05-18T23:33:42.572+0000] {task_command.py:426} INFO - Running <TaskInstance: Real_Estate_Webscraping_ETL.Ingest_Data_from_Redfin manual__2024-05-18T23:32:15.298986+00:00 [running]> on host c0373bd0174c
+[2024-05-18T23:33:42.673+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Real_Estate_Webscraping_ETL' AIRFLOW_CTX_TASK_ID='Ingest_Data_from_Redfin' AIRFLOW_CTX_EXECUTION_DATE='2024-05-18T23:32:15.298986+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-18T23:32:15.298986+00:00'
+[2024-05-18T23:33:42.674+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T23:33:42.689+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.16.5', 9092)]>: connecting to kafka:9092 [('192.168.16.5', 9092) IPv4]
+[2024-05-18T23:33:42.690+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-18T23:33:42.691+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.16.5', 9092)]>: Connection complete.
+[2024-05-18T23:33:42.798+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-18T23:33:42.799+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-18T23:33:43.366+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser
+[2024-05-18T23:33:46.247+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com
+[2024-05-18T23:33:52.785+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-05-18T23:33:52.830+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-18T23:33:52.834+0000] {process_utils.py:132} INFO - Sending 15 to group 1222. PIDs of all processes in the group: [1230, 1222]
+[2024-05-18T23:33:52.835+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1222
+[2024-05-18T23:33:52.838+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-05-18T23:33:53.352+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1230, status='terminated', started='23:33:42') (1230) terminated with exit code None
+[2024-05-18T23:34:52.868+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=1222, name='airflow task ru', status='sleeping', started='23:33:41') did not respond to SIGTERM. Trying SIGKILL
+[2024-05-18T23:34:52.906+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 1222
+[2024-05-18T23:34:53.008+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1222, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='23:33:41') (1222) terminated with exit code -9
+[2024-05-18T23:34:53.011+0000] {standard_task_runner.py:178} ERROR - Job 334 was killed before it finished (likely due to running out of memory)

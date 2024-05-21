@@ -1,0 +1,313 @@
+[2024-05-17T21:24:45.845+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T21:24:46.322+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:20:41.741748+00:00 [queued]>
+[2024-05-17T21:24:46.359+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:20:41.741748+00:00 [queued]>
+[2024-05-17T21:24:46.359+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 6
+[2024-05-17T21:24:46.429+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-17 21:20:41.741748+00:00
+[2024-05-17T21:24:46.567+0000] {standard_task_runner.py:63} INFO - Started process 11235 to run task
+[2024-05-17T21:24:47.034+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-17T21:20:41.741748+00:00', '--job-id', '242', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmp5mhhcl2f']
+[2024-05-17T21:24:47.284+0000] {standard_task_runner.py:91} INFO - Job 242: Subtask Ingest_Data
+[2024-05-17T21:24:48.307+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:20:41.741748+00:00 [running]> on host 3e429f118033
+[2024-05-17T21:24:48.561+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T21:20:41.741748+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T21:20:41.741748+00:00'
+[2024-05-17T21:24:48.566+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T21:24:48.678+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T21:24:48.683+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-17T21:24:48.688+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T21:24:48.809+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-17T21:24:48.809+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-17T21:24:49.722+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-17T21:24:51.679+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-17T21:25:01.212+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-17T21:25:05.728+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:25:05.730+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-17T21:25:05.731+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/1458-Hudson-Ave-94124/home/748039
+[2024-05-17T21:25:19.209+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:25:21.492+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:25:22.787+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:25:23.471+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:25:23.955+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:25:25.820+0000] {logging_mixin.py:188} INFO - {
+  "address": "1458 Hudson Ave San Francisco CA 94124",
+  "price": "1467000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/CA/San-Francisco/1458-Hudson-Ave-94124/home/748039",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_10.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_1.jpg",
+    "https://my.matterport.com/api/v2/player/models/FY2mXyHjhmb/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_11.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_8.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_2.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_4.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_16.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_28.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_32.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_29.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_48.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_51.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_58.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_63.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Michael Sommers",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Michael Sommers",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "1162",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1941",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "5255009"
+}
+[2024-05-17T21:25:25.835+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:25:25.859+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T21:25:25.861+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T21:25:25.863+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-05-17T21:25:25.975+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:25:25.975+0000] {logging_mixin.py:188} INFO - 2
+[2024-05-17T21:25:25.976+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/492-Bartlett-St-94110/home/1843033
+[2024-05-17T21:25:41.786+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:25:45.221+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:25:45.859+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:25:46.615+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:25:47.119+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:25:48.929+0000] {logging_mixin.py:188} INFO - {
+  "address": "492 Bartlett St San Francisco CA 94110",
+  "price": "1369900",
+  "beds": "0",
+  "baths": "\u2014",
+  "link": "https://www.redfin.com/CA/San-Francisco/492-Bartlett-St-94110/home/1843033",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_14_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_20_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_26_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "",
+  "listing_agent_name": "Anh Pham",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Anthony Torres",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "2552",
+  "stories": "2",
+  "style": "Multi-Family (2-4 Unit)",
+  "year_built": "1900",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "6530011"
+}
+[2024-05-17T21:25:48.934+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:25:49.021+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:25:49.021+0000] {logging_mixin.py:188} INFO - 3
+[2024-05-17T21:25:49.022+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/403-Main-St-94105/unit-409N/home/1950222
+[2024-05-17T21:26:10.900+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:26:14.801+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:26:16.186+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:26:16.951+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:26:17.446+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:26:19.045+0000] {logging_mixin.py:188} INFO - {
+  "address": "403 Main St Unit 409N San Francisco CA 94105",
+  "price": "815000",
+  "beds": "1",
+  "baths": "1",
+  "link": "https://www.redfin.com/CA/San-Francisco/403-Main-St-94105/unit-409N/home/1950222",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_15_0.jpg"
+  ],
+  "hoa_fee": "847",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Donny Piwowarski",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Anthony Torres",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "814",
+  "stories": "1",
+  "style": "Condo/Co-op",
+  "year_built": "1997",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "3768205"
+}
+[2024-05-17T21:26:19.049+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:26:19.219+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:26:19.220+0000] {logging_mixin.py:188} INFO - 4
+[2024-05-17T21:26:19.222+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/194-196-27th-St-94110/home/190850559
+[2024-05-17T21:26:37.828+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:26:40.898+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:26:41.707+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:26:42.364+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:26:42.793+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:26:44.328+0000] {logging_mixin.py:188} INFO - {
+  "address": "194 - 196 27th St San Francisco CA 94110",
+  "price": "1848000",
+  "beds": "4",
+  "baths": "4",
+  "link": "https://www.redfin.com/CA/San-Francisco/194-196-27th-St-94110/home/190850559",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/039/genMid.424031039_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/039/genMid.424031039_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/039/genMid.424031039_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/039/genMid.424031039_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_14_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_20_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_26_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_32_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_38_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_44_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_50_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_56_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/039/424031039_62_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "",
+  "listing_agent_name": "Todd Montgomery",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Anthony Torres",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "",
+  "style": "Multi-Family (2-4 Unit)",
+  "year_built": "",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "6577027"
+}
+[2024-05-17T21:26:44.329+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:26:44.484+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:26:44.484+0000] {logging_mixin.py:188} INFO - 5
+[2024-05-17T21:26:44.488+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/194-27th-St-94110/home/1891070
+[2024-05-17T21:26:59.328+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:27:02.016+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:27:02.878+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:27:03.582+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:27:04.098+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:27:05.889+0000] {logging_mixin.py:188} INFO - {
+  "address": "194 27th St San Francisco CA 94110",
+  "price": "999000",
+  "beds": "2",
+  "baths": "2",
+  "link": "https://www.redfin.com/CA/San-Francisco/194-27th-St-94110/home/1891070",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/044/genMid.424031044_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/044/genMid.424031044_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/044/genMid.424031044_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/044/genMid.424031044_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/044/genMid.424031044_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/044/genMid.424031044_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_14_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_20_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_26_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_32_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_38_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/044/424031044_44_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "",
+  "listing_agent_name": "Todd Montgomery",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Anthony Torres",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "1980",
+  "stories": "2",
+  "style": "Multi-Family (2-4 Unit)",
+  "year_built": "1900",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "6577027"
+}
+[2024-05-17T21:27:05.893+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:27:06.027+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:27:06.028+0000] {logging_mixin.py:188} INFO - 6
+[2024-05-17T21:27:06.029+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/196-27th-St-94110/home/179358923
+[2024-05-17T21:27:28.233+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:27:32.307+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:27:32.978+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:27:33.789+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:27:34.618+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:27:36.031+0000] {logging_mixin.py:188} INFO - {
+  "address": "196 27th St San Francisco CA 94110",
+  "price": "849000",
+  "beds": "2",
+  "baths": "2",
+  "link": "https://www.redfin.com/CA/San-Francisco/196-27th-St-94110/home/179358923",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/051/genMid.424031051_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/051/genMid.424031051_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/051/genMid.424031051_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/051/genMid.424031051_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/051/genMid.424031051_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/051/genMid.424031051_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_14_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_20_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_26_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_32_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_38_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_44_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_50_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_56_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/051/424031051_62_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "",
+  "listing_agent_name": "Todd Montgomery",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Anthony Torres",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "",
+  "style": "Condo/Co-op",
+  "year_built": "",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "6577027"
+}
+[2024-05-17T21:27:36.033+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:27:36.205+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:27:36.205+0000] {logging_mixin.py:188} INFO - 7
+[2024-05-17T21:27:36.207+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/786-Minna-St-94103/unit-12/home/12395909
+[2024-05-17T21:28:01.278+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:28:06.537+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-05-17T21:28:06.553+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T21:28:06.560+0000] {process_utils.py:132} INFO - Sending 15 to group 11235. PIDs of all processes in the group: [11237, 11235]
+[2024-05-17T21:28:06.560+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 11235
+[2024-05-17T21:28:06.562+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-05-17T21:28:06.618+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=11237, status='terminated', started='21:24:47') (11237) terminated with exit code None
+[2024-05-17T21:29:06.575+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=11235, name='airflow task ru', status='sleeping', started='21:24:45') did not respond to SIGTERM. Trying SIGKILL
+[2024-05-17T21:29:06.628+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 11235
+[2024-05-17T21:29:06.690+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=11235, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='21:24:45') (11235) terminated with exit code -9
+[2024-05-17T21:29:06.700+0000] {standard_task_runner.py:178} ERROR - Job 242 was killed before it finished (likely due to running out of memory)

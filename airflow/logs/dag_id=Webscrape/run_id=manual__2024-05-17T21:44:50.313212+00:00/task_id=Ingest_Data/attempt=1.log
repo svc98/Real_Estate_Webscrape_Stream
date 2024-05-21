@@ -1,0 +1,174 @@
+[2024-05-17T21:44:54.189+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T21:44:54.352+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:44:50.313212+00:00 [queued]>
+[2024-05-17T21:44:54.375+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:44:50.313212+00:00 [queued]>
+[2024-05-17T21:44:54.376+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-17T21:44:54.409+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-17 21:44:50.313212+00:00
+[2024-05-17T21:44:54.458+0000] {standard_task_runner.py:63} INFO - Started process 12646 to run task
+[2024-05-17T21:44:54.480+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-17T21:44:50.313212+00:00', '--job-id', '252', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmp70so0vfm']
+[2024-05-17T21:44:54.520+0000] {standard_task_runner.py:91} INFO - Job 252: Subtask Ingest_Data
+[2024-05-17T21:44:54.957+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:44:50.313212+00:00 [running]> on host 3e429f118033
+[2024-05-17T21:44:55.248+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T21:44:50.313212+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T21:44:50.313212+00:00'
+[2024-05-17T21:44:55.258+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T21:44:55.436+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T21:44:55.445+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-17T21:44:55.459+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T21:44:55.578+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-17T21:44:55.579+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-17T21:44:56.346+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-17T21:44:58.492+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-17T21:45:06.771+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-17T21:45:11.569+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:45:11.575+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-17T21:45:11.581+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/1458-Hudson-Ave-94124/home/748039
+[2024-05-17T21:45:30.931+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:45:48.365+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:45:49.630+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:45:50.384+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:45:51.004+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:45:52.724+0000] {logging_mixin.py:188} INFO - {
+  "address": "1458 Hudson Ave San Francisco CA 94124",
+  "price": "1467000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/CA/San-Francisco/1458-Hudson-Ave-94124/home/748039",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_10.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_1.jpg",
+    "https://my.matterport.com/api/v2/player/models/FY2mXyHjhmb/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_11.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_8.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_2.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_5.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_9.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_7.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_4.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_16.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_28.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_32.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_29.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_48.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_51.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_58.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_63.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Michael Sommers",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Michael Sommers",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "1162",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1941",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "5255009"
+}
+[2024-05-17T21:45:52.726+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:45:52.738+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T21:45:52.740+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T21:45:52.741+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-05-17T21:45:52.855+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:45:52.855+0000] {logging_mixin.py:188} INFO - 2
+[2024-05-17T21:45:52.858+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/492-Bartlett-St-94110/home/1843033
+[2024-05-17T21:46:07.773+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:46:10.222+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:46:11.011+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:46:11.747+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:46:12.298+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:46:13.838+0000] {logging_mixin.py:188} INFO - {
+  "address": "492 Bartlett St San Francisco CA 94110",
+  "price": "1369900",
+  "beds": "0",
+  "baths": "\u2014",
+  "link": "https://www.redfin.com/CA/San-Francisco/492-Bartlett-St-94110/home/1843033",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/mbpaddedwide/154/genMid.424034154_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_14_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_20_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/9/bigphoto/154/424034154_26_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "",
+  "listing_agent_name": "Anh Pham",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Anthony Torres",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "2552",
+  "stories": "2",
+  "style": "Multi-Family (2-4 Unit)",
+  "year_built": "1900",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "6530011"
+}
+[2024-05-17T21:46:13.842+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:46:14.043+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:46:14.045+0000] {logging_mixin.py:188} INFO - 3
+[2024-05-17T21:46:14.048+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/403-Main-St-94105/unit-409N/home/1950222
+[2024-05-17T21:46:29.874+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:46:32.498+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:46:33.522+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:46:34.395+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:46:35.010+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:46:36.545+0000] {logging_mixin.py:188} INFO - {
+  "address": "403 Main St Unit 409N San Francisco CA 94105",
+  "price": "815000",
+  "beds": "1",
+  "baths": "1",
+  "link": "https://www.redfin.com/CA/San-Francisco/403-Main-St-94105/unit-409N/home/1950222",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_6_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_7_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/mbpaddedwide/031/genMid.424034031_8_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/77/bigphoto/031/424034031_15_0.jpg"
+  ],
+  "hoa_fee": "847",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Donny Piwowarski",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Anthony Torres",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "814",
+  "stories": "1",
+  "style": "Condo/Co-op",
+  "year_built": "1997",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "3768205"
+}
+[2024-05-17T21:46:36.548+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:46:36.778+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:46:36.781+0000] {logging_mixin.py:188} INFO - 4
+[2024-05-17T21:46:36.785+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/194-196-27th-St-94110/home/190850559
+[2024-05-17T21:46:48.608+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-05-17T21:46:48.836+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T21:46:48.915+0000] {process_utils.py:132} INFO - Sending 15 to group 12646. PIDs of all processes in the group: [12653, 12646]
+[2024-05-17T21:46:48.931+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 12646
+[2024-05-17T21:46:48.936+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-05-17T21:46:49.453+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=12653, status='terminated', started='21:44:54') (12653) terminated with exit code None
+[2024-05-17T21:47:48.961+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=12646, name='airflow task ru', status='sleeping', started='21:44:53') did not respond to SIGTERM. Trying SIGKILL
+[2024-05-17T21:47:49.031+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 12646
+[2024-05-17T21:47:49.135+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=12646, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='21:44:53') (12646) terminated with exit code -9
+[2024-05-17T21:47:49.141+0000] {standard_task_runner.py:178} ERROR - Job 252 was killed before it finished (likely due to running out of memory)

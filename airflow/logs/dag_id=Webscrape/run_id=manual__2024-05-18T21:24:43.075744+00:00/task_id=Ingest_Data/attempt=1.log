@@ -1,0 +1,32 @@
+[2024-05-18T21:24:48.210+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T21:24:48.369+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:24:43.075744+00:00 [queued]>
+[2024-05-18T21:24:48.378+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:24:43.075744+00:00 [queued]>
+[2024-05-18T21:24:48.379+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-18T21:24:48.394+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-18 21:24:43.075744+00:00
+[2024-05-18T21:24:48.437+0000] {standard_task_runner.py:63} INFO - Started process 3447 to run task
+[2024-05-18T21:24:48.446+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-18T21:24:43.075744+00:00', '--job-id', '283', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmp4c977o19']
+[2024-05-18T21:24:48.463+0000] {standard_task_runner.py:91} INFO - Job 283: Subtask Ingest_Data
+[2024-05-18T21:24:49.360+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:24:43.075744+00:00 [running]> on host f3c105d69d83
+[2024-05-18T21:24:49.861+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-18T21:24:43.075744+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-18T21:24:43.075744+00:00'
+[2024-05-18T21:24:49.873+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T21:24:50.004+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.7', 9092)]>: connecting to kafka:9092 [('172.25.0.7', 9092) IPv4]
+[2024-05-18T21:24:50.008+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-18T21:24:50.012+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.7', 9092)]>: Connection complete.
+[2024-05-18T21:24:50.138+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-18T21:24:50.139+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-18T21:24:51.897+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-18T21:24:54.257+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-18T21:25:05.323+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-18T21:25:11.176+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-18T21:25:11.179+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-18T21:25:11.181+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/5853-Mission-St-94112/unit-2/home/795540
+[2024-05-18T21:25:29.833+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-05-18T21:25:29.850+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-18T21:25:29.856+0000] {process_utils.py:132} INFO - Sending 15 to group 3447. PIDs of all processes in the group: [3454, 3447]
+[2024-05-18T21:25:29.857+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 3447
+[2024-05-18T21:25:29.858+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-05-18T21:25:30.367+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=3454, status='terminated', started='21:24:49') (3454) terminated with exit code None
+[2024-05-18T21:26:29.896+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=3447, name='airflow task ru', status='sleeping', started='21:24:47') did not respond to SIGTERM. Trying SIGKILL
+[2024-05-18T21:26:29.938+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 3447
+[2024-05-18T21:26:29.960+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=3447, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='21:24:47') (3447) terminated with exit code -9
+[2024-05-18T21:26:29.964+0000] {standard_task_runner.py:178} ERROR - Job 283 was killed before it finished (likely due to running out of memory)

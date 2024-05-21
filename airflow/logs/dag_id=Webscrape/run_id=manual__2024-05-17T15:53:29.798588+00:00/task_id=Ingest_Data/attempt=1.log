@@ -1,0 +1,180 @@
+[2024-05-17T15:53:31.940+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T15:53:31.976+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T15:53:29.798588+00:00 [queued]>
+[2024-05-17T15:53:31.981+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T15:53:29.798588+00:00 [queued]>
+[2024-05-17T15:53:31.982+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-17T15:53:31.990+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-17 15:53:29.798588+00:00
+[2024-05-17T15:53:32.022+0000] {standard_task_runner.py:63} INFO - Started process 1236 to run task
+[2024-05-17T15:53:32.045+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-17T15:53:29.798588+00:00', '--job-id', '212', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmp_2ry7n_j']
+[2024-05-17T15:53:32.054+0000] {standard_task_runner.py:91} INFO - Job 212: Subtask Ingest_Data
+[2024-05-17T15:53:32.286+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T15:53:29.798588+00:00 [running]> on host 3e429f118033
+[2024-05-17T15:53:32.466+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T15:53:29.798588+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T15:53:29.798588+00:00'
+[2024-05-17T15:53:32.469+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T15:53:32.508+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T15:53:32.509+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-17T15:53:32.513+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T15:53:32.629+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-17T15:53:32.665+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-17T15:53:33.597+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-17T15:53:35.171+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-17T15:53:45.005+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-17T15:53:49.870+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T15:53:49.877+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-17T15:53:49.887+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/17113-Soho-Dr-28204/home/170607944
+[2024-05-17T15:54:13.120+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T15:54:24.504+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T15:54:26.102+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T15:54:27.133+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T15:54:27.783+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T15:54:29.878+0000] {logging_mixin.py:188} INFO - {
+  "address": "17113 Soho Dr Charlotte NC 28204",
+  "price": "760000",
+  "beds": "3",
+  "baths": "4.5",
+  "link": "https://www.redfin.com/NC/Charlotte/17113-Soho-Dr-28204/home/170607944",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_9.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_11.jpg",
+    "https://my.matterport.com/api/v2/player/models/ED3A7ghRwH6/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_13.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_14.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_12.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_18.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_24.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_30.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_36.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_43.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_51.jpg"
+  ],
+  "hoa_fee": "236",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Jon Bartholomew",
+  "listing_agent_contact": "jonathan.bartholomew@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "4",
+  "style": "Townhouse",
+  "year_built": "2020",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "08111612"
+}
+[2024-05-17T15:54:29.880+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T15:54:29.917+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T15:54:29.924+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T15:54:29.925+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-05-17T15:54:30.146+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T15:54:30.148+0000] {logging_mixin.py:188} INFO - 2
+[2024-05-17T15:54:30.154+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/3200-Dunaire-Dr-28205/home/43938459
+[2024-05-17T15:54:53.302+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T15:54:57.427+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T15:54:59.632+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T15:55:01.004+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T15:55:01.999+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T15:55:04.068+0000] {logging_mixin.py:188} INFO - {
+  "address": "3200 Dunaire Dr Charlotte NC 28205",
+  "price": "475000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/3200-Dunaire-Dr-28205/home/43938459",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_1.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_2.jpg",
+    "https://my.matterport.com/api/v2/player/models/EL5PrvVRLoz/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_4.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_5.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_3.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_11.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_21.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_27.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_33.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_39.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_45.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Lilliah Moseley",
+  "listing_agent_contact": "lilliah.moseley@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1442",
+  "unfinished_sqft": "",
+  "total_sqft": "1442",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1959",
+  "year_renovated": "1970",
+  "county": "Mecklenburg County",
+  "APN": "10112504"
+}
+[2024-05-17T15:55:04.073+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T15:55:04.251+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T15:55:04.254+0000] {logging_mixin.py:188} INFO - 3
+[2024-05-17T15:55:04.261+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/2739-Grand-Union-Way-28209/home/148598761
+[2024-05-17T15:55:20.208+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T15:55:22.320+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T15:55:23.788+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T15:55:24.641+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T15:55:25.402+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T15:55:27.378+0000] {logging_mixin.py:188} INFO - {
+  "address": "2739 Grand Union Way Charlotte NC 28209",
+  "price": "649900",
+  "beds": "3",
+  "baths": "3.5",
+  "link": "https://www.redfin.com/NC/Charlotte/2739-Grand-Union-Way-28209/home/148598761",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_22.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_38.jpg",
+    "https://my.matterport.com/api/v2/player/models/cVZCU4kuhtR/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_30.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_45.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_46.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_1.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_5.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_10.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_18.jpg"
+  ],
+  "hoa_fee": "262",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Jill Moyer",
+  "listing_agent_contact": "jill.moyer@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "4",
+  "style": "Townhouse",
+  "year_built": "2019",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "14901360"
+}
+[2024-05-17T15:55:27.381+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T15:55:27.554+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T15:55:27.555+0000] {logging_mixin.py:188} INFO - 4
+[2024-05-17T15:55:27.562+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/13403-Willow-Falls-Rd-28215/home/44186943
+[2024-05-17T15:57:04.196+0000] {logging_mixin.py:188} INFO - Traceback (most recent call last):
+  File "/opt/***/dags/includes/main.py", line 135, in run
+    await page2.wait_for_selector("div[id='photoPreviewButton']", timeout=90000)
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 7812, in wait_for_selector
+    await self._impl_obj.wait_for_selector(
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_page.py", line 373, in wait_for_selector
+    return await self._main_frame.wait_for_selector(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 323, in wait_for_selector
+    await self._channel.send("waitForSelector", locals_to_params(locals()))
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 513, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.wait_for_selector: Timeout 90000ms exceeded.
+Call log:
+waiting for locator("div[id='photoPreviewButton']") to be visible
+[2024-05-17T15:57:04.349+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-17T15:57:04.354+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T15:57:04.453+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Webscrape, task_id=Ingest_Data, run_id=manual__2024-05-17T15:53:29.798588+00:00, execution_date=20240517T155329, start_date=20240517T155331, end_date=20240517T155704
+[2024-05-17T15:57:04.530+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-17T15:57:04.567+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T15:57:04.568+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

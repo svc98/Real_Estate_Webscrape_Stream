@@ -1,0 +1,15 @@
+[2024-05-19T00:01:16.591+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-19T00:01:23.585+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Real_Estate_Webscraping_ETL.Ingest_Data_from_Redfin scheduled__2024-05-18T12:22:00+00:00 [queued]>
+[2024-05-19T00:01:23.712+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Real_Estate_Webscraping_ETL.Ingest_Data_from_Redfin scheduled__2024-05-18T12:22:00+00:00 [queued]>
+[2024-05-19T00:01:23.717+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 6
+[2024-05-19T00:01:24.639+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data_from_Redfin> on 2024-05-18 12:22:00+00:00
+[2024-05-19T00:01:26.391+0000] {standard_task_runner.py:63} INFO - Started process 944 to run task
+[2024-05-19T00:01:27.064+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Real_Estate_Webscraping_ETL', 'Ingest_Data_from_Redfin', 'scheduled__2024-05-18T12:22:00+00:00', '--job-id', '418', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmpbx167n5z']
+[2024-05-19T00:01:27.764+0000] {standard_task_runner.py:91} INFO - Job 418: Subtask Ingest_Data_from_Redfin
+[2024-05-19T00:01:31.849+0000] {local_task_job_runner.py:124} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-05-19T00:01:33.360+0000] {process_utils.py:132} INFO - Sending 15 to group 944. PIDs of all processes in the group: [944]
+[2024-05-19T00:01:33.441+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 944
+[2024-05-19T00:01:34.028+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=944, status='terminated', exitcode=<Negsignal.SIGTERM: -15>, started='00:01:25') (944) terminated with exit code -15
+[2024-05-19T00:01:34.363+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 143
+[2024-05-19T00:01:38.691+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-19T00:01:40.311+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

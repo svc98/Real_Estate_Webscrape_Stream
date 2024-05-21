@@ -1,0 +1,268 @@
+[2024-05-17T16:57:27.875+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T16:57:28.154+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T16:57:22.222779+00:00 [queued]>
+[2024-05-17T16:57:28.177+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T16:57:22.222779+00:00 [queued]>
+[2024-05-17T16:57:28.178+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-17T16:57:28.203+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-17 16:57:22.222779+00:00
+[2024-05-17T16:57:28.223+0000] {standard_task_runner.py:63} INFO - Started process 4508 to run task
+[2024-05-17T16:57:28.506+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-17T16:57:22.222779+00:00', '--job-id', '223', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmpq_w477i3']
+[2024-05-17T16:57:28.691+0000] {standard_task_runner.py:91} INFO - Job 223: Subtask Ingest_Data
+[2024-05-17T16:57:29.314+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T16:57:22.222779+00:00 [running]> on host 3e429f118033
+[2024-05-17T16:57:29.464+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T16:57:22.222779+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T16:57:22.222779+00:00'
+[2024-05-17T16:57:29.480+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T16:57:29.534+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T16:57:29.535+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-17T16:57:29.537+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T16:57:29.649+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-17T16:57:29.649+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-17T16:57:30.360+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-17T16:57:31.906+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-17T16:57:42.014+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-17T16:57:44.304+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T16:57:44.309+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-17T16:57:44.311+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/17113-Soho-Dr-28204/home/170607944
+[2024-05-17T16:57:58.971+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T16:58:03.541+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T16:58:11.291+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T16:58:12.483+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T16:58:13.152+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T16:58:14.850+0000] {logging_mixin.py:188} INFO - {
+  "address": "17113 Soho Dr Charlotte NC 28204",
+  "price": "760000",
+  "beds": "3",
+  "baths": "4.5",
+  "link": "https://www.redfin.com/NC/Charlotte/17113-Soho-Dr-28204/home/170607944",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_9.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_11.jpg",
+    "https://my.matterport.com/api/v2/player/models/ED3A7ghRwH6/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_13.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_14.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_12.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_16.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/genLdpUgcMediaBrowserUrl/item_17.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_18.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_24.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_30.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_36.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_43.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/922567_JPG/item_51.jpg"
+  ],
+  "hoa_fee": "236",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Jon Bartholomew",
+  "listing_agent_contact": "jonathan.bartholomew@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "4",
+  "style": "Townhouse",
+  "year_built": "2020",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "08111612"
+}
+[2024-05-17T16:58:14.852+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T16:58:15.078+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T16:58:15.099+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T16:58:15.149+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-05-17T16:58:15.494+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T16:58:15.494+0000] {logging_mixin.py:188} INFO - 2
+[2024-05-17T16:58:15.497+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/3200-Dunaire-Dr-28205/home/43938459
+[2024-05-17T16:58:33.528+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T16:58:37.601+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T16:58:38.490+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T16:58:39.631+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T16:58:40.646+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T16:58:42.687+0000] {logging_mixin.py:188} INFO - {
+  "address": "3200 Dunaire Dr Charlotte NC 28205",
+  "price": "475000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/NC/Charlotte/3200-Dunaire-Dr-28205/home/43938459",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_1.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_2.jpg",
+    "https://my.matterport.com/api/v2/player/models/EL5PrvVRLoz/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_4.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_5.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_3.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_8.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_9.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/genLdpUgcMediaBrowserUrl/item_10.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_11.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_21.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_27.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_33.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_39.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919050_JPG/item_45.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Lilliah Moseley",
+  "listing_agent_contact": "lilliah.moseley@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "1442",
+  "unfinished_sqft": "",
+  "total_sqft": "1442",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1959",
+  "year_renovated": "1970",
+  "county": "Mecklenburg County",
+  "APN": "10112504"
+}
+[2024-05-17T16:58:42.690+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T16:58:42.950+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T16:58:42.953+0000] {logging_mixin.py:188} INFO - 3
+[2024-05-17T16:58:42.957+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/2739-Grand-Union-Way-28209/home/148598761
+[2024-05-17T16:59:05.167+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T16:59:14.465+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T16:59:15.607+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T16:59:16.565+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T16:59:17.147+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T16:59:19.163+0000] {logging_mixin.py:188} INFO - {
+  "address": "2739 Grand Union Way Charlotte NC 28209",
+  "price": "649900",
+  "beds": "3",
+  "baths": "3.5",
+  "link": "https://www.redfin.com/NC/Charlotte/2739-Grand-Union-Way-28209/home/148598761",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_22.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_38.jpg",
+    "https://my.matterport.com/api/v2/player/models/cVZCU4kuhtR/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_30.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/genLdpUgcMediaBrowserUrl/item_45.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_46.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_1.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_5.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_10.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919615_JPG/item_18.jpg"
+  ],
+  "hoa_fee": "262",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Jill Moyer",
+  "listing_agent_contact": "jill.moyer@redfin.com",
+  "redfin_agent_name": "Stephen Passarelli",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "4",
+  "style": "Townhouse",
+  "year_built": "2019",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "14901360"
+}
+[2024-05-17T16:59:19.165+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T16:59:19.271+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T16:59:19.273+0000] {logging_mixin.py:188} INFO - 4
+[2024-05-17T16:59:19.274+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/3264-Barons-Court-Rd-28213/home/44113430
+[2024-05-17T16:59:41.854+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T16:59:49.871+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T16:59:51.113+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T16:59:51.905+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T16:59:52.513+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T16:59:54.671+0000] {logging_mixin.py:188} INFO - {
+  "address": "3264 Barons Court Rd Charlotte NC 28213",
+  "price": "270000",
+  "beds": "3",
+  "baths": "2.5",
+  "link": "https://www.redfin.com/NC/Charlotte/3264-Barons-Court-Rd-28213/home/44113430",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/951/4141951_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/951/genMid.4141951_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/951/genMid.4141951_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/951/genMid.4141951_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/951/genMid.4141951_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/951/4141951_3_0.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "",
+  "listing_agent_name": "Deanna Smith",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Scarlett Property Group",
+  "finished_sqft": "1625",
+  "unfinished_sqft": "",
+  "total_sqft": "1625",
+  "stories": "2",
+  "style": "Townhouse",
+  "year_built": "2004",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "05149101"
+}
+[2024-05-17T16:59:54.672+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T16:59:54.872+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T16:59:54.877+0000] {logging_mixin.py:188} INFO - 5
+[2024-05-17T16:59:54.880+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/9819-Avenal-Ln-28270/home/113404883
+[2024-05-17T17:00:24.825+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T17:00:34.866+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T17:00:36.050+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T17:00:37.142+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T17:00:38.132+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T17:00:40.239+0000] {logging_mixin.py:188} INFO - {
+  "address": "9819 Avenal Ln Charlotte NC 28270",
+  "price": "1300000",
+  "beds": "5",
+  "baths": "5",
+  "link": "https://www.redfin.com/NC/Charlotte/9819-Avenal-Ln-28270/home/113404883",
+  "photos": [
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/468/4141468_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/468/genMid.4141468_1_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/468/genMid.4141468_2_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/468/genMid.4141468_4_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/468/genMid.4141468_5_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/468/4141468_3_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/468/4141468_9_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/468/4141468_15_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/468/4141468_21_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/468/4141468_27_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/468/4141468_33_0.jpg",
+    "https://ssl.cdn-redfin.com/photo/103/bigphoto/468/4141468_39_0.jpg"
+  ],
+  "hoa_fee": "142",
+  "buyers_agent_fee": "2.5",
+  "listing_agent_name": "Lane Jones",
+  "listing_agent_contact": "lane@groupjonesrealty.com",
+  "redfin_agent_name": "Jon Bartholomew",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "",
+  "stories": "2",
+  "style": "Single Family Residential",
+  "year_built": "2017",
+  "year_renovated": "",
+  "county": "Mecklenburg County",
+  "APN": "23102315"
+}
+[2024-05-17T17:00:40.240+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T17:00:40.482+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T17:00:40.485+0000] {logging_mixin.py:188} INFO - 6
+[2024-05-17T17:00:40.495+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/NC/Charlotte/13403-Willow-Falls-Rd-28215/home/44186943
+[2024-05-17T17:02:21.106+0000] {logging_mixin.py:188} INFO - Traceback (most recent call last):
+  File "/opt/***/dags/includes/main.py", line 137, in run
+    await page2.click("div[id='photoPreviewButton']", timeout=90000)
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 9444, in click
+    await self._impl_obj.click(
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_page.py", line 753, in click
+    return await self._main_frame.click(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 488, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 513, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.click: Timeout 90000ms exceeded.
+Call log:
+waiting for locator("div[id='photoPreviewButton']")
+[2024-05-17T17:02:21.474+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-17T17:02:21.547+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T17:02:22.078+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Webscrape, task_id=Ingest_Data, run_id=manual__2024-05-17T16:57:22.222779+00:00, execution_date=20240517T165722, start_date=20240517T165728, end_date=20240517T170222
+[2024-05-17T17:02:22.801+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-17T17:02:23.080+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T17:02:23.081+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

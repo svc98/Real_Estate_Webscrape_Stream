@@ -1,0 +1,38 @@
+[2024-05-16T15:43:04.020+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-16T15:43:04.034+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Process_Send_Data manual__2024-05-16T15:36:58.228443+00:00 [queued]>
+[2024-05-16T15:43:04.038+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Process_Send_Data manual__2024-05-16T15:36:58.228443+00:00 [queued]>
+[2024-05-16T15:43:04.038+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 6
+[2024-05-16T15:43:04.043+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): Process_Send_Data> on 2024-05-16 15:36:58.228443+00:00
+[2024-05-16T15:43:04.049+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=307) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-05-16T15:43:04.048+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Process_Send_Data', 'manual__2024-05-16T15:36:58.228443+00:00', '--job-id', '191', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmp35ymuhn2']
+[2024-05-16T15:43:04.050+0000] {standard_task_runner.py:63} INFO - Started process 308 to run task
+[2024-05-16T15:43:04.050+0000] {standard_task_runner.py:91} INFO - Job 191: Subtask Process_Send_Data
+[2024-05-16T15:43:04.073+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Process_Send_Data manual__2024-05-16T15:36:58.228443+00:00 [running]> on host d16a9a0c8ccf
+[2024-05-16T15:43:04.110+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Process_Send_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-16T15:36:58.228443+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-16T15:36:58.228443+00:00'
+[2024-05-16T15:43:04.111+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-16T15:43:04.120+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2024-05-16T15:43:04.122+0000] {spark_submit.py:401} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --num-executors 1 --total-executor-cores 1 --executor-cores 1 --executor-memory 2g --driver-memory 2g --name arrow-spark --deploy-mode client dags/includes/jobs/spark_consumer.py
+[2024-05-16T15:43:04.130+0000] {spark_submit.py:571} INFO - Failed to find Spark jars directory (/opt/spark/assembly/target/scala-2.12/jars).
+[2024-05-16T15:43:04.130+0000] {spark_submit.py:571} INFO - You need to build Spark with the target "package" before running this program.
+[2024-05-16T15:43:04.131+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-16T15:43:04.135+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 174, in execute
+    self._hook.submit(self.application)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 502, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --num-executors 1 --total-executor-cores 1 --executor-cores 1 --executor-memory 2g --driver-memory 2g --name arrow-spark --deploy-mode client dags/includes/jobs/spark_consumer.py. Error code is: 1.
+[2024-05-16T15:43:04.137+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=Webscrape, task_id=Process_Send_Data, run_id=manual__2024-05-16T15:36:58.228443+00:00, execution_date=20240516T153658, start_date=20240516T154304, end_date=20240516T154304
+[2024-05-16T15:43:04.142+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 191 for task Process_Send_Data (Cannot execute: spark-submit --master spark://spark-master:7077 --num-executors 1 --total-executor-cores 1 --executor-cores 1 --executor-memory 2g --driver-memory 2g --name arrow-spark --deploy-mode client dags/includes/jobs/spark_consumer.py. Error code is: 1.; 308)
+[2024-05-16T15:43:04.148+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-16T15:43:04.156+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-16T15:43:04.156+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

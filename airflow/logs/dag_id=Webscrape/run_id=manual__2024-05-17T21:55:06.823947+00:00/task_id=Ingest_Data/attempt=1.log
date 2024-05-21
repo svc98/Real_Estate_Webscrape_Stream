@@ -1,0 +1,146 @@
+[2024-05-17T21:55:12.316+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T21:55:12.396+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:55:06.823947+00:00 [queued]>
+[2024-05-17T21:55:12.420+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:55:06.823947+00:00 [queued]>
+[2024-05-17T21:55:12.420+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-17T21:55:12.432+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-17 21:55:06.823947+00:00
+[2024-05-17T21:55:12.455+0000] {standard_task_runner.py:63} INFO - Started process 13882 to run task
+[2024-05-17T21:55:12.487+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-17T21:55:06.823947+00:00', '--job-id', '258', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmpf2l7j98g']
+[2024-05-17T21:55:12.494+0000] {standard_task_runner.py:91} INFO - Job 258: Subtask Ingest_Data
+[2024-05-17T21:55:12.591+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T21:55:06.823947+00:00 [running]> on host 3e429f118033
+[2024-05-17T21:55:12.681+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T21:55:06.823947+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T21:55:06.823947+00:00'
+[2024-05-17T21:55:12.683+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T21:55:12.714+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T21:55:12.715+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-17T21:55:12.717+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T21:55:12.824+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-17T21:55:12.829+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-17T21:55:13.560+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-17T21:55:15.728+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-17T21:55:25.400+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-17T21:55:28.932+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:55:28.943+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-17T21:55:28.945+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/1458-Hudson-Ave-94124/home/748039
+[2024-05-17T21:55:49.213+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:55:53.627+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:55:54.797+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:55:55.461+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:55:56.226+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:55:57.897+0000] {logging_mixin.py:188} INFO - {
+  "address": "1458 Hudson Ave San Francisco CA 94124",
+  "price": "1467000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/CA/San-Francisco/1458-Hudson-Ave-94124/home/748039",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_10.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_1.jpg",
+    "https://my.matterport.com/api/v2/player/models/FY2mXyHjhmb/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_11.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_8.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_2.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_4.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_16.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_28.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_32.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_29.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_48.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_51.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_58.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_63.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Michael Sommers",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Michael Sommers",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "1162",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1941",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "5255009"
+}
+[2024-05-17T21:55:57.899+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T21:55:57.974+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T21:55:57.976+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T21:55:57.977+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-05-17T21:55:58.498+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T21:55:58.498+0000] {logging_mixin.py:188} INFO - 2
+[2024-05-17T21:55:58.500+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/492-Bartlett-St-94110/home/1843033
+[2024-05-17T21:56:12.589+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T21:56:14.777+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T21:56:15.535+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T21:56:16.235+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T21:56:16.920+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T21:56:16.908+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-05-17T21:56:16.926+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T21:56:16.933+0000] {process_utils.py:132} INFO - Sending 15 to group 13882. PIDs of all processes in the group: [13889, 13882]
+[2024-05-17T21:56:16.934+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 13882
+[2024-05-17T21:56:16.935+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-05-17T21:56:16.979+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T21:56:16.986+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/includes/main.py", line 205, in main
+    await run(playwright, producer)
+  File "/opt/airflow/dags/includes/main.py", line 198, in run
+    await browser.close()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 13658, in close
+    return mapping.from_maybe_impl(await self._impl_obj.close(reason=reason))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_browser.py", line 189, in close
+    raise e
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_browser.py", line 186, in close
+    await self._channel.send("close", {"reason": reason})
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 513, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Browser.close: Connection closed while reading from the driver
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/includes/main.py", line 208, in ingestion_start
+    asyncio.run(main())
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/includes/main.py", line 204, in main
+    async with async_playwright() as playwright:
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/async_api/_context_manager.py", line 57, in __aexit__
+    await self._connection.stop_async()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 285, in stop_async
+    self.cleanup()
+  File "/home/airflow/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 296, in cleanup
+    callback.future.set_exception(self._closed_error)
+asyncio.exceptions.InvalidStateError: invalid state
+[2024-05-17T21:56:16.996+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=13889, status='terminated', started='21:55:11') (13889) terminated with exit code None
+[2024-05-17T21:56:17.022+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=Webscrape, task_id=Ingest_Data, run_id=manual__2024-05-17T21:55:06.823947+00:00, execution_date=20240517T215506, start_date=20240517T215512, end_date=20240517T215617
+[2024-05-17T21:56:17.050+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 258 for task Ingest_Data (invalid state; 13882)
+[2024-05-17T21:56:17.096+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=13882, status='terminated', exitcode=1, started='21:55:11') (13882) terminated with exit code 1

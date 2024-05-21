@@ -1,0 +1,83 @@
+[2024-05-17T22:01:58.978+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T22:01:59.015+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T22:01:55.128801+00:00 [queued]>
+[2024-05-17T22:01:59.022+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T22:01:55.128801+00:00 [queued]>
+[2024-05-17T22:01:59.022+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-17T22:01:59.029+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-17 22:01:55.128801+00:00
+[2024-05-17T22:01:59.092+0000] {standard_task_runner.py:63} INFO - Started process 14242 to run task
+[2024-05-17T22:01:59.115+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-17T22:01:55.128801+00:00', '--job-id', '262', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmpi8u97unr']
+[2024-05-17T22:01:59.140+0000] {standard_task_runner.py:91} INFO - Job 262: Subtask Ingest_Data
+[2024-05-17T22:01:59.417+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-17T22:01:55.128801+00:00 [running]> on host 3e429f118033
+[2024-05-17T22:01:59.798+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T22:01:55.128801+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T22:01:55.128801+00:00'
+[2024-05-17T22:01:59.809+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T22:01:59.846+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T22:01:59.847+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-17T22:01:59.848+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T22:01:59.968+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-17T22:01:59.969+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-17T22:02:00.630+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-17T22:02:02.812+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-17T22:02:13.278+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-17T22:02:17.455+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T22:02:17.462+0000] {logging_mixin.py:188} INFO - 1
+[2024-05-17T22:02:17.466+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/1458-Hudson-Ave-94124/home/748039
+[2024-05-17T22:02:31.857+0000] {logging_mixin.py:188} INFO - Extracting Pictures
+[2024-05-17T22:02:40.454+0000] {logging_mixin.py:188} INFO - Extracting Key Details
+[2024-05-17T22:02:42.827+0000] {logging_mixin.py:188} INFO - Extracting Listing Agent Details
+[2024-05-17T22:02:43.582+0000] {logging_mixin.py:188} INFO - Extracting Redfin Agent Details
+[2024-05-17T22:02:44.145+0000] {logging_mixin.py:188} INFO - Extracting Property Details
+[2024-05-17T22:02:45.745+0000] {logging_mixin.py:188} INFO - {
+  "address": "1458 Hudson Ave San Francisco CA 94124",
+  "price": "1467000",
+  "beds": "3",
+  "baths": "2",
+  "link": "https://www.redfin.com/CA/San-Francisco/1458-Hudson-Ave-94124/home/748039",
+  "photos": [
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_10.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_1.jpg",
+    "https://my.matterport.com/api/v2/player/models/FY2mXyHjhmb/thumb",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_11.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/genLdpUgcMediaBrowserUrl/item_8.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_2.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_4.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_15.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_16.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_28.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_32.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_29.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_48.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_51.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_58.jpg",
+    "https://ssl.cdn-redfin.com/system_files/media/919744_JPG/item_63.jpg"
+  ],
+  "hoa_fee": "",
+  "buyers_agent_fee": "2",
+  "listing_agent_name": "Michael Sommers",
+  "listing_agent_contact": "",
+  "redfin_agent_name": "Michael Sommers",
+  "finished_sqft": "",
+  "unfinished_sqft": "",
+  "total_sqft": "1162",
+  "stories": "1",
+  "style": "Single Family Residential",
+  "year_built": "1941",
+  "year_renovated": "",
+  "county": "San Francisco County",
+  "APN": "5255009"
+}
+[2024-05-17T22:02:45.748+0000] {logging_mixin.py:188} INFO - Sending Data to Kafka
+[2024-05-17T22:02:45.788+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-05-17T22:02:45.795+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-05-17T22:02:45.796+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-05-17T22:02:47.584+0000] {logging_mixin.py:188} INFO - --------
+[2024-05-17T22:02:47.585+0000] {logging_mixin.py:188} INFO - 2
+[2024-05-17T22:02:47.586+0000] {logging_mixin.py:188} INFO - Navigating to Listing page: https://www.redfin.com/CA/San-Francisco/45-Santa-Cruz-Ave-94112/home/833397
+[2024-05-17T22:03:01.311+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-05-17T22:03:01.323+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T22:03:01.329+0000] {process_utils.py:132} INFO - Sending 15 to group 14242. PIDs of all processes in the group: [14250, 14242]
+[2024-05-17T22:03:01.330+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 14242
+[2024-05-17T22:03:01.331+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-05-17T22:03:01.846+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=14250, status='terminated', started='22:01:59') (14250) terminated with exit code None
+[2024-05-17T22:04:01.359+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=14242, name='airflow task ru', status='sleeping', started='22:01:58') did not respond to SIGTERM. Trying SIGKILL
+[2024-05-17T22:04:01.405+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 14242
+[2024-05-17T22:04:01.511+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=14242, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='22:01:58') (14242) terminated with exit code -9
+[2024-05-17T22:04:01.516+0000] {standard_task_runner.py:178} ERROR - Job 262 was killed before it finished (likely due to running out of memory)

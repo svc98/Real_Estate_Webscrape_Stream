@@ -1,0 +1,45 @@
+[2024-05-18T21:10:58.858+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T21:10:58.911+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:10:54.835868+00:00 [queued]>
+[2024-05-18T21:10:58.923+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:10:54.835868+00:00 [queued]>
+[2024-05-18T21:10:58.923+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-05-18T21:10:58.962+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Ingest_Data> on 2024-05-18 21:10:54.835868+00:00
+[2024-05-18T21:10:58.994+0000] {standard_task_runner.py:63} INFO - Started process 2567 to run task
+[2024-05-18T21:10:59.014+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Webscrape', 'Ingest_Data', 'manual__2024-05-18T21:10:54.835868+00:00', '--job-id', '280', '--raw', '--subdir', 'DAGS_FOLDER/webscrapping.py', '--cfg-path', '/tmp/tmpan4gb66i']
+[2024-05-18T21:10:59.028+0000] {standard_task_runner.py:91} INFO - Job 280: Subtask Ingest_Data
+[2024-05-18T21:10:59.336+0000] {task_command.py:426} INFO - Running <TaskInstance: Webscrape.Ingest_Data manual__2024-05-18T21:10:54.835868+00:00 [running]> on host f3c105d69d83
+[2024-05-18T21:10:59.515+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='svc' AIRFLOW_CTX_DAG_ID='Webscrape' AIRFLOW_CTX_TASK_ID='Ingest_Data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-18T21:10:54.835868+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-18T21:10:54.835868+00:00'
+[2024-05-18T21:10:59.516+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T21:10:59.545+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.7', 9092)]>: connecting to kafka:9092 [('172.25.0.7', 9092) IPv4]
+[2024-05-18T21:10:59.546+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-05-18T21:10:59.547+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.7', 9092)]>: Connection complete.
+[2024-05-18T21:10:59.661+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-05-18T21:10:59.661+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-05-18T21:11:01.814+0000] {logging_mixin.py:188} INFO - Connecting to Scraping Browser...
+[2024-05-18T21:11:04.535+0000] {logging_mixin.py:188} INFO - Connected! Navigating to https://www.redfin.com...
+[2024-05-18T21:11:12.003+0000] {logging_mixin.py:188} INFO - Searching...
+[2024-05-18T21:12:13.215+0000] {logging_mixin.py:188} INFO - Traceback (most recent call last):
+  File "/opt/***/dags/includes/main.py", line 111, in run
+    content = await page.inner_html("div[class='HomeCardsContainer flex flex-wrap']", timeout=60000)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 10338, in inner_html
+    await self._impl_obj.inner_html(
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_page.py", line 885, in inner_html
+    return await self._main_frame.inner_html(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 623, in inner_html
+    return await self._channel.send("innerHTML", locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/***/.local/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 513, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.inner_html: Timeout 60000ms exceeded.
+Call log:
+waiting for locator("div[class='HomeCardsContainer flex flex-wrap']")
+[2024-05-18T21:12:13.568+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-18T21:12:13.603+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-18T21:12:13.706+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Webscrape, task_id=Ingest_Data, run_id=manual__2024-05-18T21:10:54.835868+00:00, execution_date=20240518T211054, start_date=20240518T211058, end_date=20240518T211213
+[2024-05-18T21:12:13.809+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-18T21:12:13.877+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-18T21:12:13.879+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
